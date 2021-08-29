@@ -55,7 +55,6 @@
             <th>Surname</th>
             <th>Age</th>
             <th>Email</th>
-            <th>Actions</th>
         </tr>
         <tr>
             <td class="link">001</td>
@@ -63,7 +62,6 @@
             <td>Tucker</td>
             <td>25</td>
             <td>will@gmail.com</td>
-            <td><input type="button" value="+"></input></td>
         </tr>
         <tr>
             <td class="link">010</td>
@@ -71,7 +69,6 @@
             <td>Beck</td>
             <td>32</td>
             <td>jamesb@gmailcom</td>
-            <td><input type="button" value="+"></input></td>
         </tr>
         <tr>
             <td class="link">014</td>
@@ -79,7 +76,6 @@
             <td>Gates</td>
             <td>60</td>
             <td>bill@gmail.com</td>
-            <td><input type="button" value="+"></input></td>
         </tr>
         <tr>
             <td class="link">002</td>
@@ -87,7 +83,6 @@
             <td>Dorsey</td>
             <td>35</td>
             <td>jackdorsey@gmail.com</td>
-            <td><input type="button" value="+" onclick="addNewLine()"></input></td>
         </tr>
         
     </table>
@@ -104,7 +99,7 @@
     <input type="age" id="nage" placeholder="age" value=""> <br><br>
     <label for="email">Email :</label>
     <input type="email" id="email" placeholder="email" value=""> <br><br>
-    <input type="button" value="Sumbit">
+    <input type="button" value="Sumbit" >
   </form>
 <br><br>
 
@@ -115,6 +110,12 @@
     <button type="submit" value="Add students" onclick="changeColorUl()">
       Add color
   </button>
+  <button type="submit" value="Add students" onclick="swapHeader()">
+    Swap Header
+</button>
+<button type="submit" value="Add students" onclick="swapHeader()">
+    Change table bg
+</button>
    
 
     <script src="weekend.js"></script>

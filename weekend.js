@@ -26,14 +26,6 @@
 // --></select>
 
     // EX6.: Add a button next to "textChange", when pressed the title and the H1 of the page must be changed with the content of "textChange"
-// function changeH1Content() {
-//     let value = document.getElementById('textChange').value
-//     let h1 = document.querySelector('h1')
-//       h1.innerHTML = value
-//     let h2 = document.querySelector('h2')
-//      h2.innerHTML = value   
-// }
-
 function changeH1Content() {
     let value = document.getElementById('textChange').value
     let h1 = document.querySelector('h1')
@@ -67,21 +59,38 @@ function addEmptyUlOrDiv(){
         enroll.appendChild(enrollNode)
 }
 //     EX10.: Add an extra column to the Table named "actions"
-// function addColumn(){
-//     let column = document.getElementById('categories')
-//     let columnNode = document.createElement('th')
-//        columnNode.innerHTML = 'actions'
-//        columnNode.classList.add('actions')
-//        column.appendChild(columnNode)
-// }
-//           DONE WITH HTML
+function addColumn(){
+    let column = document.getElementById('categories')
+    let columnNode = column.insertCell(column.length)
+        columnNode.innerText = "Actions"
+}
 
 //     EX11.: Add a button in each "action cell" with a "+" sign. When the button is pressed a new line must appear inside the "UL / DIV" in the enrolled section list
-function addNewLine(){
-     let column = document.querySelector('.ul')
-     let button = document.createElement('li')
-         button.innerText = '________________'
-         column.appendChild(button)
+function addButton(){
+    let columns = document.querySelectorAll('tr')
+
+    for(i = 1; i < columns.length; i++){
+
+    let tabledata = document.createElement('td')
+    let button = document.createElement('button')
+    button.innerHTML='+'
+    button.classList='newList'
+    tabledata.appendChild(button)
+
+    columns[i].appendChild(tabledata)
+  }
+    let buttonNode = document.getElementsByClassName('newList')
+
+      for (let i = 0; i < buttonNode.length; i++) {
+            buttonNode[i].addEventListener('click',addToList)
+      } 
+}
+
+function addToList(){
+    let list = document.getElementsByTagName('ul')[0]
+    let listNode = document.createElement('li')
+        listNode.innerHTML = 'New students'
+        list.appendChild(listNode)
 }
 // generated dynamically but i had some issues trying to assign the button to add a new line in the ul
 //              DONE WITH HTML     
@@ -93,8 +102,10 @@ function addbtn(){
           button.innerText = 'Remove from list'
           list.appendChild(button)
 }
+
 //     EX13.: Create a simple form with 5 fields: ID, Name, Surname, Age, Email
-//             Form was done in html
+//            DONE WITH HTML
+
 //     EX14.: Create a button "add students" which adds a new row to the table
 //            Button was created in html, now adding functionality with JS
 function addStudent(){
@@ -114,13 +125,27 @@ function changeColorUl(){
 }
 
 
+//     EX17.: Add somewhere a button, on click, it counts the number of entry in the list and shows it in a newly created paragraph
+
+//     EX18.: Add somewhere a button, on click, it swaps HEADER and Subtitle
+function swapHeader(){
+    let h1 = document.querySelector('h1')
+      h1.innerHTML = 'sike'
+    let h2 = document.querySelector('h2')
+     h2.innerHTML = 'sike'
+}
+
+//     EX19.: Add somewhere a button, on click, change the table background to a random color
+
+
 
 
 
 window.onload = function(){
     enrolledStudent()
     addEmptyUlOrDiv()
-    // addColumn()
-    // addButton()
+    addColumn()
+    addButton()
     addbtn()
+    
 }
