@@ -24,7 +24,22 @@
 //     EX20.: Add a "color picker" to the page, when the color changes, apply it to the header
 //     EX21.: Add a dropdown (<select> tag), with your fav movies. When one is selected, change the heading of the page with the selected value
 // --></select>
+//     EX4.: Add a link to a Facebook profile for each of the IDs
+function addLink(){
+    let link = document.querySelectorAll('.link')
+       let linkArray = []
 
+       for (let i = 0; i < link.length; i++){
+           linkArray.push(link[i].innerHTML)
+       }
+       for (let i = 0; i < link.length; i++){
+            link[i].innerHTML = ''
+            let linkNode = document.createElement('a')
+            linkNode.href = 'https://facebook.com'
+            linkNode.innerHTML =linkArray[i]
+            link[i].appendChild(linkNode)
+       }
+}
     // EX6.: Add a button next to "textChange", when pressed the title and the H1 of the page must be changed with the content of "textChange"
 function changeH1Content() {
     let value = document.getElementById('textChange').value
@@ -90,17 +105,23 @@ function addToList(){
     let list = document.getElementsByTagName('ul')[0]
     let listNode = document.createElement('li')
         listNode.innerHTML = 'New students'
+        listNode.classList.add('new-students')
         list.appendChild(listNode)
 }
-// generated dynamically but i had some issues trying to assign the button to add a new line in the ul
-//              DONE WITH HTML     
 
 //     EX12.: Add button for each item of the list. When pressed, the student is removed from the list. 
 function addbtn(){
-          let list = document.querySelector('.ul')
-          let button = document.createElement('button')
-          button.innerText = 'Remove from list'
-          list.appendChild(button)
+          let list = document.getElementsByTagName('li')
+
+          for (let i = 0; i < list.length; i++){
+              let btn = document.createElement('button')
+              btn.classList.add('remove button')
+              btn.innerHTML = 'Remove btn'
+            //   btn.accessKeyLabel('click', ()=>{
+            //       btn.parentNode.removeChild()
+            //   })
+              list.appendChild(btn)
+          }
 }
 
 //     EX13.: Create a simple form with 5 fields: ID, Name, Surname, Age, Email
@@ -120,7 +141,7 @@ function addStudent(){
 
 // EX16.: Add somewhere a button, on click, it changes the color of each item in the list in RED
 function changeColorUl(){ 
-    let changeColor = document.querySelector('.ul')
+    let changeColor = document.querySelector('ul')
         changeColor.style.color = 'red'
 }
 
@@ -130,9 +151,9 @@ function changeColorUl(){
 //     EX18.: Add somewhere a button, on click, it swaps HEADER and Subtitle
 function swapHeader(){
     let h1 = document.querySelector('h1')
-      h1.innerHTML = 'sike'
+      h1.innerHTML = 'Sike !!'
     let h2 = document.querySelector('h2')
-     h2.innerHTML = 'sike'
+     h2.innerHTML = 'Sike !!'
 }
 
 //     EX19.: Add somewhere a button, on click, change the table background to a random color
@@ -147,5 +168,6 @@ window.onload = function(){
     addColumn()
     addButton()
     addbtn()
+    addLink()
     
 }
