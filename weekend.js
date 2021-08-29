@@ -108,7 +108,7 @@ function addStudent(){
 
 
 // EX16.: Add somewhere a button, on click, it changes the color of each item in the list in RED
-function changeColorUl(){
+function changeColorUl(){ 
     let changeColor = document.querySelector('.ul')
         changeColor.style.color = 'red'
 }
