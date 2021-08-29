@@ -1,0 +1,122 @@
+<!--
+    WEEKEND EXERCISES!
+
+    EX1.: Create a header for the page
+    EX2.: Create a subtitle for the page
+    EX3.: Create a table with 4 rows and 5 columns (ID, Name, Surname, Age, Email)
+    EX4.: Add a link to a Facebook profile for each of the IDs
+    EX5.: Add a text input "textChange" for plain text
+    EX6.: Add a button next to "textChange", when pressed the title and the H1 of the page must be changed with the content of "textChange"
+    EX7.: When the button is pressed, if "textChange" is empty, alert the user with a message
+    EX8.: Add a new section with title "Enrolled Students"
+    EX9.: Add an empty UL or DIV inside this new section
+    EX10.: Add an extra column to the Table named "actions"
+    EX11.: Add a button in each "action cell" with a "+" sign. When the button is pressed a new line must appear inside the "UL / DIV" in the enrolled section list
+    EX12.: Add button for each item of the list. When pressed, the student is removed from the list. 
+    EX13.: Create a simple form with 5 fields: ID, Name, Surname, Age, Email
+    EX14.: Create a button "add students" which adds a new row to the table
+    EX15.: Add a "counter section" in which there is always the number of items in the List
+
+    EX16.: Add somewhere a button, on click, it changes the color of each item in the list in RED
+    EX17.: Add somewhere a button, on click, it counts the number of entry in the list and shows it in a newly created paragraph
+    EX18.: Add somewhere a button, on click, it swaps HEADER and Subtitle
+    EX19.: Add somewhere a button, on click, change the table background to a random color
+    EX20.: Add a "color picker" to the page, when the color changes, apply it to the header
+    EX21.: Add a dropdown (<select> tag), with your fav movies. When one is selected, change the heading of the page with the selected value
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weekend.css">
+</head>
+
+<body>
+    <header>
+        <h1>Subtitle</h1>
+        <h2>Title</h2>
+        <div class="container">
+        <input type="text" id="textChange" name="textChange" placeholder="change title and h1">
+        <input type="button" value="sumbit" onclick="changeH1Content()" onclick="contentEmpty()">
+    </div>
+    </header>
+    <br><br>
+
+  <div class="container py-4 col-10" >
+    
+    <table id="myTable">
+        <tr id="categories"> 
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td class="link">001</td>
+            <td>Will</td>
+            <td>Tucker</td>
+            <td>25</td>
+            <td>will@gmail.com</td>
+            <td><input type="button" value="+"></input></td>
+        </tr>
+        <tr>
+            <td class="link">010</td>
+            <td>James</td>
+            <td>Beck</td>
+            <td>32</td>
+            <td>jamesb@gmailcom</td>
+            <td><input type="button" value="+"></input></td>
+        </tr>
+        <tr>
+            <td class="link">014</td>
+            <td>Bill</td>
+            <td>Gates</td>
+            <td>60</td>
+            <td>bill@gmail.com</td>
+            <td><input type="button" value="+"></input></td>
+        </tr>
+        <tr>
+            <td class="link">002</td>
+            <td>Jack</td>
+            <td>Dorsey</td>
+            <td>35</td>
+            <td>jackdorsey@gmail.com</td>
+            <td><input type="button" value="+" onclick="addNewLine()"></input></td>
+        </tr>
+        
+    </table>
+</div>  
+<br><br>
+<form>
+    <label for="id">ID :</label>
+    <input type="text" id="id" placeholder="student ID" value=""> <br><br>
+    <label for="name">Name :</label>
+    <input type="text" id="name" placeholder="Name" value=""> <br><br>
+    <label for="surname">Surname :</label>
+    <input type="text" id="surname" placeholder="Surname" value=""> <br><br>
+    <label for="age">Age :</label>
+    <input type="age" id="nage" placeholder="age" value=""> <br><br>
+    <label for="email">Email :</label>
+    <input type="email" id="email" placeholder="email" value=""> <br><br>
+    <input type="button" value="Sumbit">
+  </form>
+<br><br>
+
+  <button type="submit" value="Add students" onclick="addStudent()">
+      Add students
+  </button>
+
+    <button type="submit" value="Add students" onclick="changeColorUl()">
+      Add color
+  </button>
+   
+
+    <script src="weekend.js"></script>
+</body>
+</html>
